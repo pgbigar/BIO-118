@@ -357,41 +357,31 @@ display: none;
 </div>
 
 
-<p>{r knitr::opts_chunk$set(echo = TRUE)</p>
-<p>{r}</p>
-<p>habitat_A_population &lt;- 320 habitat_B_population &lt;- 275</p>
-<p>total_population &lt;- habitat_A_population + habitat_B_population
-is_habitat_A_larger &lt;- habitat_A_population &gt; habitat_B_population
-population_difference &lt;- habitat_A_population -
-habitat_B_population</p>
-<p>print(paste(“Habitat A population:”, habitat_A_population))
-print(paste(“Habitat B population:”, habitat_B_population))
-print(paste(“Total population:”, total_population)) print(paste(“Is
-Habitat A larger than Habitat B?”, is_habitat_A_larger))
-print(paste(“Population difference:”, population_difference))</p>
-<p>{r} current_temperature &lt;- 25 predicted_increase &lt;- 3.8</p>
-<p>future_temperature &lt;- current_temperature + predicted_increase
-current_temperature_F &lt;- (current_temperature * 9/5) + 32
-future_temperature_F &lt;- (future_temperature * 9/5) + 32
-exceeds_threshold &lt;- future_temperature &gt; 5</p>
-<p>print(paste(“Current temperature (C):”, current_temperature))
-print(paste(“Predicted increase (C):”, predicted_increase))
-print(paste(“Future temperature (C):”, future_temperature))
-print(paste(“Current temperature (F):”, current_temperature_F))
-print(paste(“Future temperature (F):”, future_temperature_F))
-print(paste(“Does future temperature exceed critical threshold?”,
-exceeds_threshold))</p>
-<p>{r} chemical_X_concentration &lt;- 15.3 chemical_Y_concentration
-&lt;- 9.8</p>
-<p>is_chemical_X_safe &lt;- chemical_X_concentration &lt; 10
-is_chemical_Y_safe &lt;- chemical_Y_concentration &lt; 10 are_both_safe
-&lt;- is_chemical_X_safe &amp; is_chemical_Y_safe</p>
-<p>print(paste(“Chemical X concentration (ppm):”,
-chemical_X_concentration)) print(paste(“Chemical Y concentration
-(ppm):”, chemical_Y_concentration)) print(paste(“Is Chemical X safe?”,
-is_chemical_X_safe)) print(paste(“Is Chemical Y safe?”,
-is_chemical_Y_safe)) print(paste(“Are both chemicals safe?”,
-are_both_safe))</p>
+<div id="monitoring-species-population-in-different-habitats" class="section level2">
+<h2>Monitoring Species Population in Different Habitats</h2>
+<pre><code>## Habitat A population: 320</code></pre>
+<pre><code>## Habitat B population: 275</code></pre>
+<pre><code>## Total population: 595</code></pre>
+<pre><code>## Is Habitat A larger than Habitat B? TRUE</code></pre>
+<pre><code>## Population difference: 45</code></pre>
+</div>
+<div id="analyzing-environmental-data-for-climate-change-impact" class="section level2">
+<h2>Analyzing Environmental Data for Climate Change Impact</h2>
+<pre><code>## Current temperature (C): 25</code></pre>
+<pre><code>## Predicted increase (C): 3.8</code></pre>
+<pre><code>## Future temperature (C): 28.8</code></pre>
+<pre><code>## Current temperature (F): 77</code></pre>
+<pre><code>## Future temperature (F): 83.84</code></pre>
+<pre><code>## Does future temperature exceed critical threshold? TRUE</code></pre>
+</div>
+<div id="evaluating-pollutant-levels-in-a-river" class="section level2">
+<h2>Evaluating Pollutant Levels in a River</h2>
+<pre><code>## Chemical X concentration (ppm): 15.3</code></pre>
+<pre><code>## Chemical Y concentration (ppm): 9.8</code></pre>
+<pre><code>## Is Chemical X safe? FALSE</code></pre>
+<pre><code>## Is Chemical Y safe? TRUE</code></pre>
+<pre><code>## Are both chemicals safe? FALSE</code></pre>
+</div>
 
 
 
