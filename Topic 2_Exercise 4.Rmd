@@ -4,10 +4,7 @@ author: "Princess Mae Bigar"
 date: "2025-08-30"
 output: html_document
 ---
-{r
-knitr::opts_chunk$set(echo = TRUE)
-
-{r}
+##Monitoring Species Population in Different Habitats
 
 habitat_A_population <- 320
 habitat_B_population <- 275
@@ -22,7 +19,8 @@ print(paste("Total population:", total_population))
 print(paste("Is Habitat A larger than Habitat B?", is_habitat_A_larger))
 print(paste("Population difference:", population_difference))
 
-{r}
+##Analyzing Environmental Data for Climate Change Impact
+
 current_temperature <- 25
 predicted_increase <- 3.8
 
@@ -38,7 +36,8 @@ print(paste("Current temperature (F):", current_temperature_F))
 print(paste("Future temperature (F):", future_temperature_F))
 print(paste("Does future temperature exceed critical threshold?", exceeds_threshold))
 
-{r}
+##Evaluating Pollutant Levels in a River
+
 chemical_X_concentration <- 15.3
 chemical_Y_concentration <- 9.8
 
