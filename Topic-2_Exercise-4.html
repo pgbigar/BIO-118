@@ -359,28 +359,65 @@ display: none;
 
 <div id="monitoring-species-population-in-different-habitats" class="section level2">
 <h2>Monitoring Species Population in Different Habitats</h2>
-<pre><code>## Habitat A population: 320</code></pre>
-<pre><code>## Habitat B population: 275</code></pre>
-<pre><code>## Total population: 595</code></pre>
-<pre><code>## Is Habitat A larger than Habitat B? TRUE</code></pre>
-<pre><code>## Population difference: 45</code></pre>
+<pre class="r"><code>habitat_A_population &lt;- 320
+habitat_B_population &lt;- 275
+
+total_population &lt;- habitat_A_population + habitat_B_population
+is_habitat_A_larger &lt;- habitat_A_population &gt; habitat_B_population
+population_difference &lt;- habitat_A_population - habitat_B_population
+
+print(paste(&quot;Habitat A population:&quot;, habitat_A_population))</code></pre>
+<pre><code>[1] &quot;Habitat A population: 320&quot;</code></pre>
+<pre class="r"><code>print(paste(&quot;Habitat B population:&quot;, habitat_B_population))</code></pre>
+<pre><code>[1] &quot;Habitat B population: 275&quot;</code></pre>
+<pre class="r"><code>print(paste(&quot;Total population:&quot;, total_population))</code></pre>
+<pre><code>[1] &quot;Total population: 595&quot;</code></pre>
+<pre class="r"><code>print(paste(&quot;Is Habitat A larger than Habitat B?&quot;, is_habitat_A_larger))</code></pre>
+<pre><code>[1] &quot;Is Habitat A larger than Habitat B? TRUE&quot;</code></pre>
+<pre class="r"><code>print(paste(&quot;Population difference:&quot;, population_difference))</code></pre>
+<pre><code>[1] &quot;Population difference: 45&quot;</code></pre>
 </div>
 <div id="analyzing-environmental-data-for-climate-change-impact" class="section level2">
 <h2>Analyzing Environmental Data for Climate Change Impact</h2>
-<pre><code>## Current temperature (C): 25</code></pre>
-<pre><code>## Predicted increase (C): 3.8</code></pre>
-<pre><code>## Future temperature (C): 28.8</code></pre>
-<pre><code>## Current temperature (F): 77</code></pre>
-<pre><code>## Future temperature (F): 83.84</code></pre>
-<pre><code>## Does future temperature exceed critical threshold? TRUE</code></pre>
+<pre class="r"><code>current_temperature &lt;- 25
+predicted_increase &lt;- 3.8
+future_temperature &lt;- current_temperature + predicted_increase
+current_temperature_F &lt;- (current_temperature * 9/5) + 32
+future_temperature_F &lt;- (future_temperature * 9/5) + 32
+exceeds_threshold &lt;- future_temperature &gt; 5
+
+print(paste(&quot;Current temperature (C):&quot;, current_temperature))</code></pre>
+<pre><code>[1] &quot;Current temperature (C): 25&quot;</code></pre>
+<pre class="r"><code>print(paste(&quot;Predicted increase (C):&quot;, predicted_increase))</code></pre>
+<pre><code>[1] &quot;Predicted increase (C): 3.8&quot;</code></pre>
+<pre class="r"><code>print(paste(&quot;Future temperature (C):&quot;, future_temperature))</code></pre>
+<pre><code>[1] &quot;Future temperature (C): 28.8&quot;</code></pre>
+<pre class="r"><code>print(paste(&quot;Current temperature (F):&quot;, current_temperature_F))</code></pre>
+<pre><code>[1] &quot;Current temperature (F): 77&quot;</code></pre>
+<pre class="r"><code>print(paste(&quot;Future temperature (F):&quot;, future_temperature_F))</code></pre>
+<pre><code>[1] &quot;Future temperature (F): 83.84&quot;</code></pre>
+<pre class="r"><code>print(paste(&quot;Does future temperature exceed critical threshold?&quot;, exceeds_threshold))</code></pre>
+<pre><code>[1] &quot;Does future temperature exceed critical threshold? TRUE&quot;</code></pre>
 </div>
 <div id="evaluating-pollutant-levels-in-a-river" class="section level2">
 <h2>Evaluating Pollutant Levels in a River</h2>
-<pre><code>## Chemical X concentration (ppm): 15.3</code></pre>
-<pre><code>## Chemical Y concentration (ppm): 9.8</code></pre>
-<pre><code>## Is Chemical X safe? FALSE</code></pre>
-<pre><code>## Is Chemical Y safe? TRUE</code></pre>
-<pre><code>## Are both chemicals safe? FALSE</code></pre>
+<pre class="r"><code>chemical_X_concentration &lt;- 15.3
+chemical_Y_concentration &lt;- 9.8
+
+is_chemical_X_safe &lt;- chemical_X_concentration &lt; 10
+is_chemical_Y_safe &lt;- chemical_Y_concentration &lt; 10
+are_both_safe &lt;- is_chemical_X_safe &amp; is_chemical_Y_safe
+
+print(paste(&quot;Chemical X concentration (ppm):&quot;, chemical_X_concentration))</code></pre>
+<pre><code>[1] &quot;Chemical X concentration (ppm): 15.3&quot;</code></pre>
+<pre class="r"><code>print(paste(&quot;Chemical Y concentration (ppm):&quot;, chemical_Y_concentration))</code></pre>
+<pre><code>[1] &quot;Chemical Y concentration (ppm): 9.8&quot;</code></pre>
+<pre class="r"><code>print(paste(&quot;Is Chemical X safe?&quot;, is_chemical_X_safe))</code></pre>
+<pre><code>[1] &quot;Is Chemical X safe? FALSE&quot;</code></pre>
+<pre class="r"><code>print(paste(&quot;Is Chemical Y safe?&quot;, is_chemical_Y_safe))</code></pre>
+<pre><code>[1] &quot;Is Chemical Y safe? TRUE&quot;</code></pre>
+<pre class="r"><code>print(paste(&quot;Are both chemicals safe?&quot;, are_both_safe))</code></pre>
+<pre><code>[1] &quot;Are both chemicals safe? FALSE&quot;</code></pre>
 </div>
 
 
