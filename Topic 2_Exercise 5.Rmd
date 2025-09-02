@@ -6,95 +6,75 @@ output: html_document
 ---
 ## **Analyzing Nucleotide Sequence Data**
 
-```{r, echo=FALSE, comment=''}
+```{r, comment=''}
 # Create a character vector of DNA sequences
-dna_sequences <- c("ATGCGTACGTAGCTAGCGT",
-                   "ATGCGTACGTAGTTAGCGT",
-                   "ATGCGTACGTAGATAGCGT")
-
-# Print DNA sequences
-cat("DNA Sequences:", paste(dna_sequences, collapse = "  "), "\n")
+dna_sequences <- c("ATGCGTACGTAGCTAGCGT","ATGCGTACGTAGTTAGCGT", "ATGCGTACGTAGATAGCGT")
 
 # Calculate lengths of sequences
 sequence_lengths <- nchar(dna_sequences)
-cat("Length of each DNA sequence:", paste(sequence_lengths, collapse = " "), "\n")
+print("Length of each DNA sequence:")
+print(sequence_lengths)
 
-# Count number of "A" in each sequence using base R
-a_counts <- sapply(dna_sequences, function(x) nchar(gsub("[^A]", "", x)))
-cat("Number of 'A' nucleotides in each sequence:", paste(a_counts, collapse = " "), "\n")
+# Count number of "A" in each sequence 
+library(stringr)
+a_counts <- str_count(dna_sequences, "A")
+print("Number of 'A' nucleotides in each sequence:")
+print(a_counts)
 
 ```
 
 ## **Monitoring Species Population in Different Habitats**
 
-```{r, echo=FALSE, comment=''}
+```{r, comment=''}
 # Create a data frame for biodiversity data
 biodiversity_data <- data.frame(
-  Species = c("Oak", "Pine", "Maple",
-              "Birch", "Spruce", "Cedar",
-              "Ash", "Fir", "Beech"),
-  Count = c(120, 85, 100,
-            60, 150, 75,
-            55, 95, 110),
-  Habitat = c("Forest A", "Forest A", "Forest A",
-              "Forest B", "Forest B", "Forest B",
-              "Forest C", "Forest C", "Forest C")
+  Species = c("Oak", "Pine", "Maple","Birch", "Spruce", "Cedar","Ash", "Fir", "Beech"),
+  Count = c(120, 85, 100,60, 150, 75, 55, 95, 110),
+  Habitat = c("Forest A", "Forest A", "Forest A","Forest B", "Forest B", "Forest B","Forest C", "Forest C", "Forest C")
 )
 
+print(biodiversity_data)
+
 # Calculate total number of species observed per habitat
-total_species_per_habitat <- tapply(biodiversity_data$Count, biodiversity_data$Habitat, sum)
+print("Total number of species per habitat")
+total_species_per_habitat <- print(tapply(biodiversity_data$Count, biodiversity_data$Habitat, sum))
 
 # Subset species with count less than 50
 low_count_species <- subset(biodiversity_data, Count < 50)
 
-# Print everything in one box
-cat("Biodiversity data:\n")
-print(biodiversity_data)
-
-cat("Total number of species observed per habitat: ",
-    paste(names(total_species_per_habitat), total_species_per_habitat, sep="=", collapse=", "), "\n")
-
-cat("Species with count less than 50: ",
-    if(nrow(low_count_species) == 0) "None" else paste(low_count_species$Species, collapse=", "), "\n")
+if (nrow(low_count_species) == 0) {
+  print("Species with count less than 50: 0")
+} else {
+  print(paste("Species with count less than 50:", paste(low_count_species$Species)))
+}
 
 ```
 
 ## **Monitoring Temperature Changes**
 
-```{r, echo=FALSE, comment=''}
+```{r, comment=''}
 # Create the temperature matrix
 monthly_temps <- matrix(
-  c(2.5, 3.1, 6.2, 10.5, 15.3, 20.1, 22.4, 21.9, 18.3, 13.8, 7.5, 3.9,
-    2.7, 3.5, 6.8, 11.0, 16.0, 21.0, 23.1, 22.5, 19.0, 14.5, 8.0, 4.1),
-  nrow = 12, ncol = 2, byrow = FALSE
-)
+  c(2.5, 3.1, 6.2, 10.5, 15.3, 20.1, 22.4, 21.9, 18.3, 13.8, 7.5, 3.9, 2.7, 3.5, 6.8, 11.0, 16.0, 21.0, 23.1, 22.5, 19.0, 14.5, 8.0, 4.1),
+  nrow = 12, ncol = 2, byrow = FALSE)
 
 # Name rows and columns (remove underscores)
 rownames(monthly_temps) <- c("January", "February", "March", "April", "May", "June",
                              "July", "August", "September", "October", "November", "December")
 colnames(monthly_temps) <- c("Year 1", "Year 2")
 
+print(monthly_temps)
+
 # Calculate average temperature for each year
-avg_temps <- colMeans(monthly_temps)
+print("Average temperatures per year")
+avg_temps <- print(colMeans(monthly_temps))
 
 # Check if Year 2 had higher average temperature than Year 1
 year2_higher <- avg_temps["Year 2"] > avg_temps["Year 1"]
+print(paste("Is Year 2 higher than Year 1 on average:", year2_higher))
 
 # Subset summer months (June, July, August)
 summer_months <- monthly_temps[c("June", "July", "August"), ]
-
-# Print matrix
-cat("Monthly Temperatures:\n")
-print(monthly_temps)
-
-# Print averages in one line
-cat("Average temperatures per year: Year 1 =", round(avg_temps["Year 1"],1),
-    ", Year 2 =", round(avg_temps["Year 2"],1), "\n")
-
-# Print comparison in separate line
-cat("Is Year 2 higher than Year 1 on average?   ", year2_higher, "\n")
-
-# Print summer months
-cat("Summer months (June-August) temperatures:\n")
+print("Summer Months (June-August) temperatures:")
 print(summer_months)
-```
+
