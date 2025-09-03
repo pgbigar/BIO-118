@@ -1,0 +1,140 @@
+---
+title: "Topic 2.2  Exercise 6"
+author: "Princess Mae Bigar"
+date: "2025-09-01"
+output: html_document
+---
+## **Analyzing Gene Expression Data**
+
+```{r, comments=''}
+
+#Creating the data frame
+gene_expression <- data.frame(
+  Gene = c("GeneA", "GeneB", "GeneC", "GeneD",
+           "GeneE", "GeneA", "GeneB", "GeneC",
+           "GeneD", "GeneE", "GeneA", "GeneB",
+           "GeneC", "GeneD", "GeneE"),
+  Expression_Level = c(15.3,10.8, 12.5, 18.1,
+                       11.7, 20.2, 17.6, 14.3,
+                       19.5, 16.2,13.8, 21.1,
+                       19.7, 22.5, 20.3),
+  Tissue = c("Tissue1", "Tissue1", "Tissue1",
+             "Tissue1", "Tissue1", "Tissue2",
+             "Tissue2", "Tissue2", "Tissue2",
+             "Tissue2", "Tissue3", "Tissue3",
+             "Tissue3", "Tissue3", "Tissue3")
+)
+
+#Display the data frame
+print("Gene Expression Data:")
+print(gene_expression)
+
+#Using for loop and if statement to find genes with expression > 20
+print("Genes with Expression Level above 20:")
+for (i in 1:nrow(gene_expression)) {
+  if (gene_expression$Expression_Level[i] > 20) {
+    print(paste(gene_expression$Gene[i],
+                gene_expression$Tissue[i],
+ gene_expression$Expression_Level[i]))
+  }
+}
+
+#Using while loop to filter Tissue2 data until finding first gene with expression < 15
+tissue2_data <- gene_expression[gene_expression$Tissue == "Tissue2", ]
+row_index <- 1
+found <- FALSE
+
+print("Checking Tissue2 data for first gene with expression < 15:")
+
+while (row_index <= nrow(tissue2_data)) {
+  current_gene <- tissue2_data[row_index, ]
+  if (current_gene$Expression_Level < 15) {
+    print(paste("First gene found with expression level below 15:", current_gene$Gene, "- Tissue:", current_gene$Tissue, "- Expression:", current_gene$Expression_Level))
+
+    found <- TRUE
+    break
+  }
+  row_index <- row_index + 1
+}
+
+```
+
+```{r, comments=''}
+## **Monitoring Specie Populations**
+
+#Creating the species population vector
+species_populations <- c(150, 45, 75, 200, 30)
+
+print("Initial species populations:")
+print(species_populations)
+
+#Use for loop and if-else to classify species status
+print("Species conservation status classification:")
+
+for (i in 1:length(species_populations)) {
+  if (species_populations[i] < 50) {
+    print(paste("Species", i, "- Population:", species_populations[i], "- Status: Endangered"))
+  } else {
+    print(paste("Species", i, "- Population:", species_populations[i], "- Status: Stable"))
+  }
+}
+
+#Assigning 
+growth_rate <- 0.05 #5% yearly growth rate
+years <- c(1,2,3)
+
+print("Population growth simulation over 3 years(5% growth rate);")
+
+#Use nested for loops to stimulate population growth
+for (species in species_populations) {
+  for (year in years) {
+    population <- species * (1.05)^year
+    print(paste("Species population", species, "Year", year, "=", round(population, 2)))
+  }
+}
+
+```
+
+## **Monitoring Water Quality**
+```{r, comments=''}
+
+#Create pollution levels vector 
+pollution_levels <- c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
+
+print("Pollution measurements:")
+print(pollution_levels)
+
+print("Pollution level warnings:")
+
+for (level in pollution_levels) {
+  if (level < 50) {
+    next  # Skip measurements below 50
+  }
+  
+  if (level > 50) {
+    print(paste("WARNING: Pollution level", level, "ppm - Above safety threshold!"))
+  }
+}
+
+#Use repeat loop to monitor until critical level of 90 ppm is detected
+print("Continuous pollution monitoring (until critical level detected):")
+current_index <- 1
+
+repeat {
+  current_level <- pollution_levels[current_index]
+  
+  print(paste("Monitoring... Current level:", current_level, "ppm"))
+  
+  if (current_level >= 90) {
+    print(paste("CRITICAL WARNING: Pollution level", current_level, 
+                "ppm detected! Immediate action required!"))
+    break  # Stop the loop when critical level is reached
+  }
+  
+  current_index <- current_index + 1
+  
+   if (current_index > length(pollution_levels)) {
+    print("Monitoring complete - no critical levels reached")
+    break
+  }
+}
