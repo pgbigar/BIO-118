@@ -10,52 +10,75 @@ editor_options:
 ## Monitoring Species Population in Different Habitats
 
 ```{r,comment=""}
+# Define population counts for each habitat
 habitat_A_population <- 320
 habitat_B_population <- 275
 
+# Calculate the total population across both habitats
 total_population <- habitat_A_population + habitat_B_population
+
+# Check if Habitat A has a larger population than Habitat B
 is_habitat_A_larger <- habitat_A_population > habitat_B_population
+
+# Compute the difference in population between the two habitats
 population_difference <- habitat_A_population - habitat_B_population
 
+# Display results
 print(paste("Habitat A population:", habitat_A_population))
 print(paste("Habitat B population:", habitat_B_population))
 print(paste("Total population:", total_population))
 print(paste("Is Habitat A larger than Habitat B?", is_habitat_A_larger))
 print(paste("Population difference:", population_difference))
+
 ```
 
 ## Analyzing Environmental Data for Climate Change Impact
 
 ```{r, comment=""}
+# Set the current temperature and predicted increase (in °C)
 current_temperature <- 25
 predicted_increase <- 3.8
+
+# Calculate future temperature (in °C)
 future_temperature <- current_temperature + predicted_increase
+
+# Convert current and future temperatures to Fahrenheit
 current_temperature_F <- (current_temperature * 9/5) + 32
 future_temperature_F <- (future_temperature * 9/5) + 32
+
+# Check if future temperature exceeds threshold 
 exceeds_threshold <- future_temperature > 5
 
+# Display results
 print(paste("Current temperature (C):", current_temperature))
 print(paste("Predicted increase (C):", predicted_increase))
 print(paste("Future temperature (C):", future_temperature))
 print(paste("Current temperature (F):", current_temperature_F))
 print(paste("Future temperature (F):", future_temperature_F))
 print(paste("Does future temperature exceed critical threshold?", exceeds_threshold))
+
 ```
 
 ## Evaluating Pollutant Levels in a River
 
 ```{r, comment=""}
+# Set chemical concentrations in parts per million (ppm)
 chemical_X_concentration <- 15.3
 chemical_Y_concentration <- 9.8
 
+# Check if each chemical is within safe limits (assumed threshold = 10 ppm)
 is_chemical_X_safe <- chemical_X_concentration < 10
 is_chemical_Y_safe <- chemical_Y_concentration < 10
+
+# Determine if both chemicals are within safe limits
 are_both_safe <- is_chemical_X_safe & is_chemical_Y_safe
 
+# Display results
 print(paste("Chemical X concentration (ppm):", chemical_X_concentration))
 print(paste("Chemical Y concentration (ppm):", chemical_Y_concentration))
 print(paste("Is Chemical X safe?", is_chemical_X_safe))
 print(paste("Is Chemical Y safe?", is_chemical_Y_safe))
 print(paste("Are both chemicals safe?", are_both_safe))
+
 ```
 

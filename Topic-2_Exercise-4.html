@@ -359,13 +359,20 @@ display: none;
 
 <div id="monitoring-species-population-in-different-habitats" class="section level2">
 <h2>Monitoring Species Population in Different Habitats</h2>
-<pre class="r"><code>habitat_A_population &lt;- 320
+<pre class="r"><code># Define population counts for each habitat
+habitat_A_population &lt;- 320
 habitat_B_population &lt;- 275
 
+# Calculate the total population across both habitats
 total_population &lt;- habitat_A_population + habitat_B_population
+
+# Check if Habitat A has a larger population than Habitat B
 is_habitat_A_larger &lt;- habitat_A_population &gt; habitat_B_population
+
+# Compute the difference in population between the two habitats
 population_difference &lt;- habitat_A_population - habitat_B_population
 
+# Display results
 print(paste(&quot;Habitat A population:&quot;, habitat_A_population))</code></pre>
 <pre><code>[1] &quot;Habitat A population: 320&quot;</code></pre>
 <pre class="r"><code>print(paste(&quot;Habitat B population:&quot;, habitat_B_population))</code></pre>
@@ -379,13 +386,21 @@ print(paste(&quot;Habitat A population:&quot;, habitat_A_population))</code></pr
 </div>
 <div id="analyzing-environmental-data-for-climate-change-impact" class="section level2">
 <h2>Analyzing Environmental Data for Climate Change Impact</h2>
-<pre class="r"><code>current_temperature &lt;- 25
+<pre class="r"><code># Set the current temperature and predicted increase (in °C)
+current_temperature &lt;- 25
 predicted_increase &lt;- 3.8
+
+# Calculate future temperature (in °C)
 future_temperature &lt;- current_temperature + predicted_increase
+
+# Convert current and future temperatures to Fahrenheit
 current_temperature_F &lt;- (current_temperature * 9/5) + 32
 future_temperature_F &lt;- (future_temperature * 9/5) + 32
+
+# Check if future temperature exceeds threshold 
 exceeds_threshold &lt;- future_temperature &gt; 5
 
+# Display results
 print(paste(&quot;Current temperature (C):&quot;, current_temperature))</code></pre>
 <pre><code>[1] &quot;Current temperature (C): 25&quot;</code></pre>
 <pre class="r"><code>print(paste(&quot;Predicted increase (C):&quot;, predicted_increase))</code></pre>
@@ -401,13 +416,18 @@ print(paste(&quot;Current temperature (C):&quot;, current_temperature))</code></
 </div>
 <div id="evaluating-pollutant-levels-in-a-river" class="section level2">
 <h2>Evaluating Pollutant Levels in a River</h2>
-<pre class="r"><code>chemical_X_concentration &lt;- 15.3
+<pre class="r"><code># Set chemical concentrations in parts per million (ppm)
+chemical_X_concentration &lt;- 15.3
 chemical_Y_concentration &lt;- 9.8
 
+# Check if each chemical is within safe limits (assumed threshold = 10 ppm)
 is_chemical_X_safe &lt;- chemical_X_concentration &lt; 10
 is_chemical_Y_safe &lt;- chemical_Y_concentration &lt; 10
+
+# Determine if both chemicals are within safe limits
 are_both_safe &lt;- is_chemical_X_safe &amp; is_chemical_Y_safe
 
+# Display results
 print(paste(&quot;Chemical X concentration (ppm):&quot;, chemical_X_concentration))</code></pre>
 <pre><code>[1] &quot;Chemical X concentration (ppm): 15.3&quot;</code></pre>
 <pre class="r"><code>print(paste(&quot;Chemical Y concentration (ppm):&quot;, chemical_Y_concentration))</code></pre>
