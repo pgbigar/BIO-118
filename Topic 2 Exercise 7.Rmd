@@ -1,0 +1,58 @@
+---
+title: "Topic 2 Exercise 7"
+author: "Princess Mae Bigar"
+date: "2025-09-03"
+output: html_document
+---
+
+## **DNA Transcription**
+
+```{r, comments=''}
+# Define function to transcribe DNA to RNA
+transcribe_dna_to_rna <- function(dna_sequence) {
+  rna_sequence <- gsub("T", "U", dna_sequence)
+  return(rna_sequence)
+}
+
+# Test the function
+dna_seq <- "ATGCGTACGTAGCTAGCGT"
+rna_result <- transcribe_dna_to_rna(dna_seq)
+print(paste("DNA sequence:", dna_seq))
+print(paste("RNA sequence:", rna_result))
+```
+
+## **Predicting Future Population Size**
+```{r, comments=''}
+# Define function to predict future population
+predict_population <- function(current_population, growth_rate, years) {
+  future_population <- current_population * (1 + growth_rate)^years
+  return(future_population)
+}
+
+# Test the function
+predicted_pop <- predict_population(1000, 0.05, 10)
+print(paste("Predicted population after 10 years:", round(predicted_pop, 2)))
+```
+
+## **Environmental Decay Simulation**
+
+```{r, comments=''}
+# Define function to simulate decay
+simulate_decay <- function(initial_concentration, decay_rate) {
+  concentration <- initial_concentration
+  steps <- 0
+  
+  while (concentration >= 1) {
+    concentration <- concentration * (1 - decay_rate)
+    steps <- steps + 1
+  }
+  
+  return(steps)
+}
+
+# Test the function
+decay_steps <- simulate_decay(50, 0.10)
+print(paste("Steps to drop below 1 ppm:", decay_steps))
+
+
+
